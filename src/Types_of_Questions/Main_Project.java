@@ -19,10 +19,15 @@ package Types_of_Questions;
 		 * @throws IOException 
 		 */
 		public static void main(String[] args) throws IOException  {
-			// TODO Auto-generated method stub
-			new Fill_in_the_blank();
+			 
+//			new Short_Answer();
 //			new True_False();
-//			new Multiple_Choice();
+			new Multiple_Choice();
+//			new Matching();
+//			new  Essay();
+//			new Math_Range();
+//			new Numerical_Question();
+			
 
 
 		}

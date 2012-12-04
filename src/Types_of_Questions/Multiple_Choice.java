@@ -1,4 +1,4 @@
-package Types_of_Questions;
+ package Types_of_Questions;
 
  
 
@@ -51,11 +51,11 @@ public class Multiple_Choice {
 		question_mulit = new JTextPane();
 		panel_1.add(question_mulit, "cell 1 1,grow,span");
 		
-//		JButton btnCancelclearQuestionText_1 = new JButton("Cancel/Clear Question Text");
-//		panel_1.add(btnCancelclearQuestionText_1, "cell 1 2,alignx right");
+		JButton btnCancelclearQuestionText_1 = new JButton("Cancel/Clear Question Text");
+		panel_1.add(btnCancelclearQuestionText_1, "cell 1 2,alignx right");
 		
-//		JButton btnAddAnswer = new JButton("Add Answer");
-//		panel_1.add(btnAddAnswer, "cell 0 3,alignx left");
+		JButton btnAddAnswer = new JButton("Add Answer");
+		panel_1.add(btnAddAnswer, "cell 0 3,alignx left");
 		
 		choiseTextFilde1 = new JTextField();
 		panel_1.add(choiseTextFilde1, "flowx,cell 1 3,growx");
@@ -85,8 +85,8 @@ public class Multiple_Choice {
 		final JSpinner spinner_3 = new JSpinner();
 		panel_1.add(spinner_3, "cell 2 6,growx");
 		
-//		JButton btnSaveToTest_1 = new JButton("Save to test file");
-//		panel_1.add(btnSaveToTest_1, "cell 0 7");
+		JButton btnSaveToTest_1 = new JButton("Save to test file");
+		panel_1.add(btnSaveToTest_1, "cell 0 7");
 		JButton btnAddAnotherMultiple = new JButton("Save and Add Another Multiple Choice");	//Multi
 		panel_1.add(btnAddAnotherMultiple, "cell 0 9 2097051 1");
 		
