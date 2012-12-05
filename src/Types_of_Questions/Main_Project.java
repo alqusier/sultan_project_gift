@@ -6,7 +6,10 @@ package Types_of_Questions;
 	import java.io.File;
 	import java.io.FileWriter;
 	import java.io.IOException;
-	import java.io.PrintWriter;
+import java.io.PrintWriter;
+
+import javax.swing.JFrame;
+import javax.swing.JTabbedPane;
 
 
 	public class Main_Project {
@@ -18,29 +21,22 @@ package Types_of_Questions;
 		 * @param args
 		 * @throws IOException 
 		 */
-<<<<<<< HEAD
 		public static void main(String[] args) throws IOException  {
 			 
-//			new Short_Answer();
-//			new True_False();
-			new Multiple_Choice();
-//			new Matching();
-//			new  Essay();
-//			new Math_Range();
-//			new Numerical_Question();
+			JFrame frame = new JFrame();
+			JTabbedPane tab = new JTabbedPane();
+			frame.add(tab);
 			
-
-=======
-		public static void main(String[] args) throws IOException {
-			// TODO Auto-generated method stub
-			// new Gui();
-			new True_False();
-//			new Multiple_Choice();
-//			NewFile();
->>>>>>> 9ab1b820e2c273611d1936a8db68c77cbdfa1ca7
-
+			tab.add("True False", new True_False());
+			tab.add("Short Answer", new Short_Answer());
+			tab.add("Multiple Choice", new Multiple_Choice());
+			
+			frame.setDefaultCloseOperation(3);
+			frame.setSize(800,600);
+			frame.setVisible(true);
+			
+			
 		}
-
 		
 
 

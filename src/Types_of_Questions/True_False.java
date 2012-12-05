@@ -6,7 +6,6 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,9 +13,7 @@ import java.io.PrintWriter;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
@@ -27,35 +24,7 @@ import javax.swing.border.TitledBorder;
 import net.miginfocom.swing.MigLayout;
 //import editor.Gui.myAction;
 
- 
-
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-
-import javax.swing.BorderFactory;
-import javax.swing.ButtonGroup;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-import javax.swing.JScrollPane;
-import javax.swing.JTextField;
-import javax.swing.JTextPane;
-import javax.swing.border.TitledBorder;
-
-import net.miginfocom.swing.MigLayout;
-//import editor.Gui.myAction;
-
-public class True_False {
-	private JFrame frame;
+public class True_False extends JPanel {
 	private JTextField textfildeTitle;
 	private JTextPane textpanQ;
 	private JButton btnAddAnpther;
@@ -65,11 +34,7 @@ public class True_False {
 	public True_False() throws IOException {
 		
 		
-		frame = new JFrame();
-		frame.setBounds(100, 100, 966, 588);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(
-				new MigLayout("", "[grow]", "[][grow]"));
+		setLayout(new MigLayout("", "[grow]", "[][grow]"));
 
 		JPanel panel = new JPanel();
 		panel.setLayout(new MigLayout("", "[153px][4px][96px][410px][218px]",
@@ -143,8 +108,8 @@ public class True_False {
 
 		panel.add(radioPanelGroup, "cell 2 2 2097051 1,alignx left,aligny top");
 
-		frame.add(panel);
-		frame.setVisible(true);
+		add(panel);
+		setVisible(true);
 
 	}
 

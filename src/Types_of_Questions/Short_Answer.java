@@ -1,96 +1,146 @@
 package Types_of_Questions;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-import java.awt.Frame;
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import net.miginfocom.swing.MigLayout;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
 import javax.swing.JButton;
-import javax.swing.JTextArea;
 import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
 
-public class Short_Answer extends JFrame {
+import net.miginfocom.swing.MigLayout;
 
-	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+public class Short_Answer extends JPanel {
 
+	private JPanel panel, labelPanel, txtPanel;
+	private JScrollPane scrPane;
+	private JTextField textField;;
+	private JLabel label;
 
-	/**
-	 * Create the frame.
-	 */
+	private ArrayList<JLabel> labelList = new ArrayList<JLabel>();
+	private ArrayList<JTextField> fieldList = new ArrayList<JTextField>();
+	private String [] letters = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+			 			 "N", "O","P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+	int i=1;
+
+	
 	public Short_Answer() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 857, 465);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(new MigLayout("", "[right][grow][]", "[]10[252.00,grow,top][grow][]"));
+
+		setLayout(new MigLayout("", "[right][grow][]", "[]10[188.00,grow,top][][]"));
 		
 		JLabel lblNewLabel = new JLabel("Quistion Titil (optional) ");
-		contentPane.add(lblNewLabel, "cell 0 0,alignx trailing");
+		add(lblNewLabel, "cell 0 0,alignx trailing");
 		
 		textField = new JTextField();
-		contentPane.add(textField, "cell 1 0 2 1,growx");
+		add(textField, "cell 1 0 2 1,growx");
 		textField.setColumns(10);
 		
 		JLabel lblQuistion = new JLabel("Quistion");
-		contentPane.add(lblQuistion, "cell 0 1,alignx right");
+		add(lblQuistion, "cell 0 1,alignx right");
 		
 		JTextArea textArea = new JTextArea();
-		contentPane.add(textArea, "cell 1 1 2 1,grow");
+		add(textArea, "cell 1 1 2 1,grow");
 		
 		JLabel lblAnswer = new JLabel("Answer");
-		contentPane.add(lblAnswer, "cell 0 2");
+		add(lblAnswer, "cell 0 2");
 		
-		JPanel panel = new JPanel();
-		contentPane.add(panel, "cell 1 2 2 1,grow");
-		panel.setLayout(new MigLayout("", "[][grow][]", "[][][]"));
+		panel = new JPanel();
+		panel.setLayout(new MigLayout("", "[right][grow]", "[]"));
+		panel.setBorder(new TitledBorder(new LineBorder(new Color(171, 173, 179)), "", TitledBorder.LEFT, TitledBorder.TOP, null, null));
 		
-		JLabel lblNewLabel_1 = new JLabel("A");
-		panel.add(lblNewLabel_1, "cell 0 0,alignx trailing");
+		scrPane = new JScrollPane(panel);
+		add(scrPane,"cell 1 2 2 1,grow,wrap");
 		
-		textField_1 = new JTextField();
-		panel.add(textField_1, "cell 1 0,growx");
-		textField_1.setColumns(10);
+		labelPanel = new JPanel(new GridLayout(i,1,0,5));
+		txtPanel = new JPanel(new GridLayout(i,1,0,5));
+
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("Delete");
-		panel.add(chckbxNewCheckBox, "cell 2 0");
+		labelList.add(new JLabel(letters[i-1]));
+		fieldList.add(new JTextField());
 		
-		JLabel lblNewLabel_2 = new JLabel("B");
-		panel.add(lblNewLabel_2, "cell 0 1,alignx trailing");
+		setAddAnswer(i);
 		
-		textField_2 = new JTextField();
-		panel.add(textField_2, "cell 1 1,growx");
-		textField_2.setColumns(10);
 		
-		JCheckBox chckbxNewCheckBox_1 = new JCheckBox("Delete");
-		panel.add(chckbxNewCheckBox_1, "cell 2 1");
+		JButton addAnswer = new JButton("Add Answare");
+		add(addAnswer, "cell 1 3,alignx right");
 		
-		JLabel lblNewLabel_3 = new JLabel("C");
-		panel.add(lblNewLabel_3, "cell 0 2,alignx trailing");
+		JButton delAnswer = new JButton("Delete");
+		add(delAnswer, "cell 2 3");
 		
-		textField_3 = new JTextField();
-		panel.add(textField_3, "cell 1 2,growx");
-		textField_3.setColumns(10);
-		
-		JCheckBox chckbxNewCheckBox_2 = new JCheckBox("Delete");
-		panel.add(chckbxNewCheckBox_2, "cell 2 2");
-		
-		JButton btnNewButton = new JButton("Add Answare");
-		contentPane.add(btnNewButton, "cell 1 3,alignx right");
-		
-		JButton btnNewButton_1 = new JButton("Delete");
-		contentPane.add(btnNewButton_1, "cell 2 3");
+		panel.add(labelPanel);
+		panel.add(txtPanel,"grow, wrap");
 		
 		setVisible(true);
+		
+		
+		addAnswer.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+
+				i++;
+				labelList.add(new JLabel(letters[i-1]));
+				fieldList.add(new JTextField());
+				setAddAnswer(i);				
+				scrPane.revalidate();
+
+			}
+		});
+		
+		delAnswer.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+
+				if(i>1)
+				{
+					i--;
+					setDelAnswer(i);
+					scrPane.revalidate();
+				}
+				else
+					JOptionPane.showMessageDialog(null, "You must have at least one answer");
+				
+			}
+		});
+
+		
 	}
+	
+	
+	private void setAddAnswer(int i) {
+		
+		labelPanel.setLayout((new GridLayout(i,1,0,5)));
+		txtPanel.setLayout((new GridLayout(i,1,0,5)));
+				
+		for (int x = 0; x < i; x++) {
+			
+			labelPanel.add(labelList.get(x));
+			txtPanel.add(fieldList.get(x));
+			
+		}
+	}	
+	
+	private void setDelAnswer(int i) {
+		
+		labelPanel.setLayout((new GridLayout(i,1,0,5)));
+		txtPanel.setLayout((new GridLayout(i,1,0,5)));
+							
+		labelPanel.remove(labelList.get(i));
+		txtPanel.remove(fieldList.get(i));			
+		
+		
+
+	}	
 
 }
