@@ -13,7 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 
 
-public class Matching extends JFrame {
+public class Matching extends JPanel {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -24,48 +24,32 @@ public class Matching extends JFrame {
 	private JTextField textField_5;
 	private JTextField textField_6;
 
-//	/**
-//	 * Launch the application.
-//	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Matching frame = new Matching();
-//					frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
-//
-//	/**
-//	 * Create the frame.
-//	 */
+ 
 	public Matching() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 777, 413);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(new MigLayout("", "[][269.00,grow][57.00,center][]", "[][173.00,grow][92.00,grow][]"));
+//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		setBounds(100, 100, 777, 413);
+//		contentPane = new JPanel();
+//		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+//		setContentPane(contentPane);
+//		contentPane.
+		
+		setLayout(new MigLayout("", "[][269.00,grow][57.00,center][]", "[][173.00,grow][92.00,grow][]"));
 		
 		JLabel lblNewLabel = new JLabel("Quistion Titil (optional)");
-		contentPane.add(lblNewLabel, "cell 0 0,alignx trailing");
+		add(lblNewLabel, "cell 0 0,alignx trailing");
 		
 		textField = new JTextField();
-		contentPane.add(textField, "cell 1 0 3 1,growx");
+		add(textField, "cell 1 0 3 1,growx");
 		textField.setColumns(10);
 		
 		JLabel lblQuistion = new JLabel("Quistion");
-		contentPane.add(lblQuistion, "cell 0 1,alignx right,aligny top");
+		add(lblQuistion, "cell 0 1,alignx right,aligny top");
 		
 		JTextArea textArea = new JTextArea();
-		contentPane.add(textArea, "cell 1 1 3 1,grow");
+		add(textArea, "cell 1 1 3 1,grow");
 		
 		JPanel panel = new JPanel();
-		contentPane.add(panel, "cell 1 2 3 1,grow");
+		add(panel, "cell 1 2 3 1,grow");
 		panel.setLayout(new MigLayout("", "[][227.00,grow][15.00,grow][142.00,grow][]", "[][][][]"));
 		
 		JLabel lblA = new JLabel("A");
@@ -120,10 +104,10 @@ public class Matching extends JFrame {
 		panel.add(chckbxDelete_1, "cell 4 2");
 		
 		JButton btnNewButton = new JButton("Add Matching");
-		contentPane.add(btnNewButton, "cell 2 3");
+		add(btnNewButton, "cell 2 3");
 		
 		JButton btnNewButton_1 = new JButton("Delete checked");
-		contentPane.add(btnNewButton_1, "cell 3 3");
+		add(btnNewButton_1, "cell 3 3");
 		
 		setVisible(true);
 	}

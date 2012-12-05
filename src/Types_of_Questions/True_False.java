@@ -22,7 +22,6 @@ import javax.swing.JTextPane;
 import javax.swing.border.TitledBorder;
 
 import net.miginfocom.swing.MigLayout;
-//import editor.Gui.myAction;
 
 public class True_False extends JPanel {
 	private JTextField textfildeTitle;
@@ -43,7 +42,7 @@ public class True_False extends JPanel {
 		JLabel lblQuestionTitleoptional = new JLabel(
 				"Question Title (optional)"); // //true
 		panel.add(lblQuestionTitleoptional,
-				"cell 0 0,alignx left,aligny center");
+				"cell 0 0,alignx right,aligny center");
 
 		textfildeTitle = new JTextField();
 		panel.add(textfildeTitle, "cell 2 0 3 1,growx,aligny top");

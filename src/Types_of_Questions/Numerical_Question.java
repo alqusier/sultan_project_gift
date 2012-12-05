@@ -14,7 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JSpinner;
 import javax.swing.JCheckBox;
 
-public class Numerical_Question extends JFrame {
+public class Numerical_Question extends JPanel {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -25,52 +25,36 @@ public class Numerical_Question extends JFrame {
 	private JTextField textField_5;
 	private JTextField textField_6;
 
-//	/**
-//	 * Launch the application.
-//	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Numerical_Question frame = new Numerical_Question();
-//					frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
-//
-//	/**
-//	 * Create the frame.
-//	 */
+
 	public Numerical_Question() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 808, 404);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
-		setContentPane(contentPane);
+//		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		setBounds(100, 100, 808, 404);
+//		contentPane = new JPanel();
+//		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+//		contentPane.setLayout(new BorderLayout(0, 0));
+//		//setContentPane(contentPane);
+//		
+//		JPanel panel = new JPanel();
+//		contentPane.add(panel, BorderLayout.CENTER);
+//		panel.
 		
-		JPanel panel = new JPanel();
-		contentPane.add(panel, BorderLayout.CENTER);
-		panel.setLayout(new MigLayout("", "[][grow][grow][]", "[][153.00,grow][89.00,grow][35.00]"));
+		setLayout(new MigLayout("", "[][grow][grow][]", "[][153.00,grow][89.00,grow][35.00]"));
 		
 		JLabel lblQuestionTitleoptional = new JLabel("Question Title (optional)");
-		panel.add(lblQuestionTitleoptional, "cell 0 0,alignx trailing");
+	    add(lblQuestionTitleoptional, "cell 0 0,alignx trailing");
 		
 		textField = new JTextField();
-		panel.add(textField, "cell 1 0 3 1,growx");
+		add(textField, "cell 1 0 3 1,growx");
 		textField.setColumns(10);
 		
 		JLabel lblQuestion = new JLabel("Question");
-		panel.add(lblQuestion, "cell 0 1,alignx right,aligny top");
+		add(lblQuestion, "cell 0 1,alignx right,aligny top");
 		
 		JTextArea textArea = new JTextArea();
-		panel.add(textArea, "cell 1 1 3 1,grow");
+		 add(textArea, "cell 1 1 3 1,grow");
 		
 		JPanel panel_1 = new JPanel();
-		panel.add(panel_1, "cell 1 2 3 1,grow");
+		add(panel_1, "cell 1 2 3 1,grow");
 		panel_1.setLayout(new MigLayout("", "[][102.00,grow][85.00][63.00][117.00][grow][][][44.00][][]", "[][][]"));
 		
 		JLabel lblNewLabel = new JLabel("A");
@@ -161,10 +145,10 @@ public class Numerical_Question extends JFrame {
 		panel_1.add(chckbxNewCheckBox_2, "cell 9 2");
 		
 		JButton btnNewButton = new JButton("Add answer");
-		panel.add(btnNewButton, "cell 2 3,alignx right");
+		add(btnNewButton, "cell 2 3,alignx right");
 		
 		JButton btnNewButton_1 = new JButton("Delete Checked");
-		panel.add(btnNewButton_1, "cell 3 3");
+		add(btnNewButton_1, "cell 3 3");
 		
 		
 		setVisible(true);

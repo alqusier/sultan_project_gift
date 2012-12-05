@@ -19,25 +19,6 @@ import javax.swing.JTextPane;
 
 import net.miginfocom.swing.MigLayout;
 
- 
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JSpinner;
-import javax.swing.JTextField;
-import javax.swing.JTextPane;
-
-import net.miginfocom.swing.MigLayout;
-
 public class Multiple_Choice extends JPanel {
 
 	private JTextField questionTitle_multi;
