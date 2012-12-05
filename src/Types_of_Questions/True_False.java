@@ -27,6 +27,33 @@ import javax.swing.border.TitledBorder;
 import net.miginfocom.swing.MigLayout;
 //import editor.Gui.myAction;
 
+ 
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.swing.BorderFactory;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+import javax.swing.border.TitledBorder;
+
+import net.miginfocom.swing.MigLayout;
+//import editor.Gui.myAction;
+
 public class True_False {
 	private JFrame frame;
 	private JTextField textfildeTitle;

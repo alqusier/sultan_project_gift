@@ -18,6 +18,7 @@ package Types_of_Questions;
 		 * @param args
 		 * @throws IOException 
 		 */
+<<<<<<< HEAD
 		public static void main(String[] args) throws IOException  {
 			 
 //			new Short_Answer();
@@ -29,6 +30,14 @@ package Types_of_Questions;
 //			new Numerical_Question();
 			
 
+=======
+		public static void main(String[] args) throws IOException {
+			// TODO Auto-generated method stub
+			// new Gui();
+			new True_False();
+//			new Multiple_Choice();
+//			NewFile();
+>>>>>>> 9ab1b820e2c273611d1936a8db68c77cbdfa1ca7
 
 		}
 

@@ -19,6 +19,25 @@ import javax.swing.JTextPane;
 
 import net.miginfocom.swing.MigLayout;
 
+ 
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+
+import net.miginfocom.swing.MigLayout;
+
 public class Multiple_Choice {
 
 	private JTextField questionTitle_multi;
@@ -51,11 +70,19 @@ public class Multiple_Choice {
 		question_mulit = new JTextPane();
 		panel_1.add(question_mulit, "cell 1 1,grow,span");
 		
+<<<<<<< HEAD
 		JButton btnCancelclearQuestionText_1 = new JButton("Cancel/Clear Question Text");
 		panel_1.add(btnCancelclearQuestionText_1, "cell 1 2,alignx right");
 		
 		JButton btnAddAnswer = new JButton("Add Answer");
 		panel_1.add(btnAddAnswer, "cell 0 3,alignx left");
+=======
+//		JButton btnCancelclearQuestionText_1 = new JButton("Cancel/Clear Question Text");
+//		panel_1.add(btnCancelclearQuestionText_1, "cell 1 2,alignx right");
+		
+//		JButton btnAddAnswer = new JButton("Add Answer");
+//		panel_1.add(btnAddAnswer, "cell 0 3,alignx left");
+>>>>>>> 9ab1b820e2c273611d1936a8db68c77cbdfa1ca7
 		
 		choiseTextFilde1 = new JTextField();
 		panel_1.add(choiseTextFilde1, "flowx,cell 1 3,growx");
@@ -85,8 +112,13 @@ public class Multiple_Choice {
 		final JSpinner spinner_3 = new JSpinner();
 		panel_1.add(spinner_3, "cell 2 6,growx");
 		
+<<<<<<< HEAD
 		JButton btnSaveToTest_1 = new JButton("Save to test file");
 		panel_1.add(btnSaveToTest_1, "cell 0 7");
+=======
+//		JButton btnSaveToTest_1 = new JButton("Save to test file");
+//		panel_1.add(btnSaveToTest_1, "cell 0 7");
+>>>>>>> 9ab1b820e2c273611d1936a8db68c77cbdfa1ca7
 		JButton btnAddAnotherMultiple = new JButton("Save and Add Another Multiple Choice");	//Multi
 		panel_1.add(btnAddAnotherMultiple, "cell 0 9 2097051 1");
 		
