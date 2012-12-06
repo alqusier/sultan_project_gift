@@ -36,8 +36,7 @@ public class True_False extends JPanel {
 		setLayout(new MigLayout("", "[grow]", "[][grow]"));
 
 		JPanel panel = new JPanel();
-		panel.setLayout(new MigLayout("", "[153px][4px][96px][410px][218px]",
-				"[28px][169px][29px][29px][29px]"));
+		panel.setLayout(new MigLayout("", "[100.00px][108.00px][410px][218px]", "[28px][169px][29px][29px][29px]"));
 
 		JLabel lblQuestionTitleoptional = new JLabel(
 				"Question Title (optional)"); // //true
@@ -45,7 +44,7 @@ public class True_False extends JPanel {
 				"cell 0 0,alignx right,aligny center");
 
 		textfildeTitle = new JTextField();
-		panel.add(textfildeTitle, "cell 2 0 3 1,growx,aligny top");
+		panel.add(textfildeTitle, "cell 1 0 3 1,growx,aligny top");
 		textfildeTitle.setColumns(10);
 
 		JLabel lblQuestion = new JLabel("Question");
@@ -53,7 +52,7 @@ public class True_False extends JPanel {
 
 		textpanQ = new JTextPane();
 		JScrollPane jp = new JScrollPane(textpanQ);
-		panel.add(jp, "cell 2 1 3 1,grow");
+		panel.add(jp, "cell 1 1 3 1,grow");
 
 		JRadioButton rdbtnTrue = new JRadioButton("True");
 		JRadioButton rdbtnFalse = new JRadioButton("Fales");
@@ -77,7 +76,7 @@ public class True_False extends JPanel {
 		JButton btnCancelclearQuestionText = new JButton(
 				"Cancel/Clear Question Text");
 		panel.add(btnCancelclearQuestionText,
-				"cell 4 2,alignx right,aligny top");
+				"cell 3 2,alignx right,aligny top");
 
 		btnAddAnpther = new JButton("Save and Add another True/False Question"); // True
 
@@ -103,9 +102,9 @@ public class True_False extends JPanel {
 			}
 		});
 
-		panel.add(btnAddAnpther, "cell 0 4 3 1,alignx left,aligny top");
+		panel.add(btnAddAnpther, "cell 0 4 2 1,alignx left,aligny top");
 
-		panel.add(radioPanelGroup, "cell 2 2 2097051 1,alignx left,aligny top");
+		panel.add(radioPanelGroup, "cell 1 2 2097051 1,alignx left,aligny top");
 
 		add(panel);
 		setVisible(true);

@@ -38,7 +38,7 @@ public class Numerical_Question extends JPanel {
 //		contentPane.add(panel, BorderLayout.CENTER);
 //		panel.
 		
-		setLayout(new MigLayout("", "[][grow][grow][]", "[][153.00,grow][89.00,grow][35.00]"));
+		setLayout(new MigLayout("", "[][223.00,grow][91.00,grow][]", "[][153.00,grow][89.00,grow][35.00]"));
 		
 		JLabel lblQuestionTitleoptional = new JLabel("Question Title (optional)");
 	    add(lblQuestionTitleoptional, "cell 0 0,alignx trailing");
@@ -143,6 +143,9 @@ public class Numerical_Question extends JPanel {
 		
 		JCheckBox chckbxNewCheckBox_2 = new JCheckBox("Delete");
 		panel_1.add(chckbxNewCheckBox_2, "cell 9 2");
+		
+		JButton btnSaveQuestion = new JButton("Save Question");
+		add(btnSaveQuestion, "cell 1 3,alignx right");
 		
 		JButton btnNewButton = new JButton("Add answer");
 		add(btnNewButton, "cell 2 3,alignx right");

@@ -27,32 +27,28 @@ public class Multiple_Choice extends JPanel {
 	private JTextField choiseTextFilde3;
 	private JTextField choiseTextFilde4;
 	JTextPane question_mulit;
-	private JFrame frame;
+	//private JFrame frame;
 	public static PrintWriter out;
 
 	public Multiple_Choice() {
 		
-		setLayout(new MigLayout("", "[][700px,grow][:40px:80px,grow]", "[][grow][][][][][][][][]"));
+		setLayout(new MigLayout("", "[][289.00px,grow][:40px:80px,grow]", "[][grow][][][][][][]"));
 		
 		JLabel lblQuestionTitleoptional_1 = new JLabel("Question Title (optional)");
 		add(lblQuestionTitleoptional_1, "cell 0 0,alignx right");
 		
 		questionTitle_multi = new JTextField();
-		add(questionTitle_multi, "cell 1 0,growx,span");
+		add(questionTitle_multi, "cell 1 0 2 1,growx");
 		questionTitle_multi.setColumns(10);
 		
 		JLabel lblQuestion_1 = new JLabel("Question");
 		add(lblQuestion_1, "cell 0 1,alignx right,aligny top");
 		
 		question_mulit = new JTextPane();
-		add(question_mulit, "cell 1 1,grow,span");
+		add(question_mulit, "cell 1 1 2 1,grow");
 		
-
-		JButton btnCancelclearQuestionText_1 = new JButton("Cancel/Clear Question Text");
-		add(btnCancelclearQuestionText_1, "cell 1 2,alignx right");
-		
-		JButton btnAddAnswer = new JButton("Add Answer");
-		add(btnAddAnswer, "cell 0 3,alignx left");
+		JLabel lblAnswer = new JLabel("Answer");
+		add(lblAnswer, "cell 0 3,alignx trailing");
 
 //		JButton btnCancelclearQuestionText_1 = new JButton("Cancel/Clear Question Text");
 //		panel_1.add(btnCancelclearQuestionText_1, "cell 1 2,alignx right");
@@ -88,16 +84,12 @@ public class Multiple_Choice extends JPanel {
 		
 		final JSpinner spinner_3 = new JSpinner();
 		add(spinner_3, "cell 2 6,growx");
-		
-
-		JButton btnSaveToTest_1 = new JButton("Save to test file");
-		add(btnSaveToTest_1, "cell 0 7");
-
-//		JButton btnSaveToTest_1 = new JButton("Save to test file");
-//		panel_1.add(btnSaveToTest_1, "cell 0 7");
-
-		JButton btnAddAnotherMultiple = new JButton("Save and Add Another Multiple Choice");	//Multi
-		add(btnAddAnotherMultiple, "cell 0 9 2097051 1");
+				
+				//		JButton btnSaveToTest_1 = new JButton("Save to test file");
+				//		panel_1.add(btnSaveToTest_1, "cell 0 7");
+				
+						JButton btnAddAnotherMultiple = new JButton("Save and Add Another Multiple Choice");	//Multi
+						add(btnAddAnotherMultiple, "cell 1 7,alignx center");
 		
 		btnAddAnotherMultiple.addActionListener(new ActionListener() {
 

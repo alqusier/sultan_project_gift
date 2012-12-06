@@ -34,20 +34,20 @@ public class Short_Answer extends JPanel {
 	
 	public Short_Answer() {
 
-		setLayout(new MigLayout("", "[right][grow][]", "[]10[188.00,grow,top][][]"));
+		setLayout(new MigLayout("", "[112.00,right][260.00,grow]", "[]10[188.00,grow,top][][]"));
 		
 		JLabel lblNewLabel = new JLabel("Quistion Titil (optional) ");
 		add(lblNewLabel, "cell 0 0,alignx trailing");
 		
 		textField = new JTextField();
-		add(textField, "cell 1 0 2 1,growx");
+		add(textField, "cell 1 0,growx");
 		textField.setColumns(10);
 		
 		JLabel lblQuistion = new JLabel("Quistion");
 		add(lblQuistion, "cell 0 1,alignx right");
 		
 		JTextArea textArea = new JTextArea();
-		add(textArea, "cell 1 1 2 1,grow");
+		add(textArea, "cell 1 1,grow");
 		
 		JLabel lblAnswer = new JLabel("Answer");
 		add(lblAnswer, "cell 0 2");
@@ -57,7 +57,7 @@ public class Short_Answer extends JPanel {
 		panel.setBorder(new TitledBorder(new LineBorder(new Color(171, 173, 179)), "", TitledBorder.LEFT, TitledBorder.TOP, null, null));
 		
 		scrPane = new JScrollPane(panel);
-		add(scrPane,"cell 1 2 2 1,grow,wrap");
+		add(scrPane,"cell 1 2,grow");
 		
 		labelPanel = new JPanel(new GridLayout(i,1,0,5));
 		txtPanel = new JPanel(new GridLayout(i,1,0,5));
@@ -68,32 +68,18 @@ public class Short_Answer extends JPanel {
 		
 		setAddAnswer(i);
 		
+		JButton btnSaveQuestion = new JButton("Save Question");
+		add(btnSaveQuestion, "flowx,cell 1 3,growy");
+		
 		
 		JButton addAnswer = new JButton("Add Answare");
-		add(addAnswer, "cell 1 3,alignx right");
-		
-		JButton delAnswer = new JButton("Delete");
-		add(delAnswer, "cell 2 3");
+		add(addAnswer, "cell 1 3,alignx right,growy");
 		
 		panel.add(labelPanel);
 		panel.add(txtPanel,"grow, wrap");
 		
-		setVisible(true);
-		
-		
-		addAnswer.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-
-				i++;
-				labelList.add(new JLabel(letters[i-1]));
-				fieldList.add(new JTextField());
-				setAddAnswer(i);				
-				scrPane.revalidate();
-
-			}
-		});
+		JButton delAnswer = new JButton("Delete");
+		add(delAnswer, "cell 1 3,alignx left");
 		
 		delAnswer.addActionListener(new ActionListener() {
 			
@@ -109,6 +95,23 @@ public class Short_Answer extends JPanel {
 				else
 					JOptionPane.showMessageDialog(null, "You must have at least one answer");
 				
+			}
+		});
+		
+		setVisible(true);
+		
+		
+		addAnswer.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+
+				i++;
+				labelList.add(new JLabel(letters[i-1]));
+				fieldList.add(new JTextField());
+				setAddAnswer(i);				
+				scrPane.revalidate();
+
 			}
 		});
 

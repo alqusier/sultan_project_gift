@@ -33,7 +33,7 @@ public class Matching extends JPanel {
 //		setContentPane(contentPane);
 //		contentPane.
 		
-		setLayout(new MigLayout("", "[][269.00,grow][57.00,center][]", "[][173.00,grow][92.00,grow][]"));
+		setLayout(new MigLayout("", "[][91.00,grow][123.00,center][80.00]", "[][173.00,grow][92.00,grow][]"));
 		
 		JLabel lblNewLabel = new JLabel("Quistion Titil (optional)");
 		add(lblNewLabel, "cell 0 0,alignx trailing");
@@ -102,6 +102,9 @@ public class Matching extends JPanel {
 		
 		JCheckBox chckbxDelete_1 = new JCheckBox("Delete");
 		panel.add(chckbxDelete_1, "cell 4 2");
+		
+		JButton btnSaveQusetion = new JButton("Save Qusetion");
+		add(btnSaveQusetion, "cell 1 3,alignx right");
 		
 		JButton btnNewButton = new JButton("Add Matching");
 		add(btnNewButton, "cell 2 3");

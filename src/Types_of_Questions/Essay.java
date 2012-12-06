@@ -10,6 +10,7 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
+import javax.swing.JButton;
 
 public class Essay extends JPanel {
 
@@ -26,7 +27,7 @@ public class Essay extends JPanel {
 		
 		JPanel panel = new JPanel();
 		contentPane.add(panel, BorderLayout.CENTER);
-		setLayout(new MigLayout("", "[][grow]", "[][grow]"));
+		setLayout(new MigLayout("", "[][grow]", "[][221.00,grow][grow]"));
 		
 		JLabel lblNewLabel = new JLabel("Quistion Titil (optional)");
 		add(lblNewLabel, "cell 0 0,alignx trailing");
@@ -40,6 +41,9 @@ public class Essay extends JPanel {
 		
 		JTextArea textArea = new JTextArea();
 		add(textArea, "cell 1 1,grow");
+		
+		JButton btnSaveAndAdd = new JButton("Save and Add Question");
+		add(btnSaveAndAdd, "cell 1 2,alignx center");
 		
 		setVisible(true);
 	}
