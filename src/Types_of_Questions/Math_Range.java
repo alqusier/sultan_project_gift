@@ -1,19 +1,13 @@
 package Types_of_Questions;
 
 import java.awt.BorderLayout;
-import java.awt.TextArea;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
 
-import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
@@ -24,91 +18,68 @@ public class Math_Range extends JPanel {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
-	public static PrintWriter out;
+	private JTextField textField_3;
+	private JTextField textField_4;
 
 	public Math_Range() {
+//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 908, 443);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
-
+//		setContentPane(contentPane);
+		
 		JPanel panel = new JPanel();
 		contentPane.add(panel, BorderLayout.CENTER);
-		setLayout(new MigLayout(
-				"",
-				"[84.00][148.00,grow][][82.00,grow][51.00][66.00,grow,fill][67.00][grow][][grow]",
-				"[][grow][]"));
-
-		JLabel lblQusitionTitleoptional = new JLabel(
-				"Qusition Title (optional)");
+		setLayout(new MigLayout("", "[84.00][148.00,grow][][82.00,grow][51.00][66.00,grow,fill][67.00][grow][][grow]", "[][grow][]"));
+		
+		JLabel lblQusitionTitleoptional = new JLabel("Qusition Title (optional)");
 		add(lblQusitionTitleoptional, "cell 0 0,alignx trailing");
-
+		
 		textField = new JTextField();
 		add(textField, "cell 1 0 9 1,growx");
 		textField.setColumns(10);
-
+		
 		JLabel lblQusition = new JLabel("Qusition");
 		add(lblQusition, "cell 0 1,alignx right,aligny top");
-
-		final TextArea textArea = new TextArea();
+		
+		JTextArea textArea = new JTextArea();
 		add(textArea, "cell 1 1 9 1,grow");
-
+		
+		JLabel lblNewLabel = new JLabel("Specifed interval end points ?");
+		add(lblNewLabel, "flowx,cell 1 2");
+		
 		JLabel lblAnswre = new JLabel("Answer");
 		add(lblAnswre, "cell 2 2,alignx trailing");
-
+		
+		JCheckBox chckbxNewCheckBox = new JCheckBox("");
+		add(chckbxNewCheckBox, "cell 1 2");
+		
 		textField_1 = new JTextField();
 		add(textField_1, "cell 3 2,growx");
 		textField_1.setColumns(10);
-
-		JLabel lblRange = new JLabel("Range  of Answer +/-");
+		
+		JLabel lblRange = new JLabel("Range +/-");
 		add(lblRange, "cell 4 2,alignx trailing");
-
-		final JSpinner spinner = new JSpinner();
+		
+		JSpinner spinner = new JSpinner();
 		add(spinner, "cell 5 2,growx");
-
-		JLabel lblRangeOfMark = new JLabel("Range of Mark+/-");
-		add(lblRangeOfMark, "cell 6 2,alignx trailing");
-
-		final JSpinner spinner_1 = new JSpinner();
-		add(spinner_1, "cell 7 2,growx");
-
-		JButton btnNewButton = new JButton("Save and Add Question");
-		add(btnNewButton, "cell 1 2,growx");
-		btnNewButton.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-
-				try {
-					out = new PrintWriter(new BufferedWriter(new FileWriter(
-							"Gift_ExamQ_Format.txt", true)));
-					out.append("::" + textField.getText() + "::\n"
-							+ textArea.getText() + " {#\n="
-							+ textField_1.getText() + ":0" + "\n=%"
-							+ spinner_1.getValue() + "%"
-							+ textField_1.getText().toString() + ":"
-							+ spinner.getValue());
-
-					out.append("}\n\n");
-					out.close();
-
-				} catch (IOException e) {
-					e.printStackTrace();
-
-				} finally {
-
-					JOptionPane.showMessageDialog(null,
-							"Question has been saved");
-					textField.setText("");
-					textArea.setText("");
-
-					textField_1.setText("");
-					spinner_1.setValue(0);
-					spinner.setValue(0);
-				}
-			}
-		});
-
+		
+		JLabel lblNewLabel_1 = new JLabel("Start Point");
+		add(lblNewLabel_1, "cell 6 2,alignx trailing");
+		
+		textField_3 = new JTextField();
+		add(textField_3, "cell 7 2,growx");
+		textField_3.setColumns(10);
+		
+		JLabel lblEndPoint = new JLabel("End Point");
+		add(lblEndPoint, "cell 8 2,alignx trailing");
+		
+		textField_4 = new JTextField();
+		add(textField_4, "cell 9 2,growx");
+		textField_4.setColumns(10);
+		
+		setVisible(true);
 	}
 
 }
