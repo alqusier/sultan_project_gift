@@ -1,7 +1,6 @@
 package Types_of_Questions;
 
 import java.awt.TextArea;
-import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
@@ -16,33 +15,24 @@ import javax.swing.JPanel;
 
 import net.miginfocom.swing.MigLayout;
 
-public class Essay extends JPanel {
-	private TextField jtfTitle;
+public class Description_of_Exam extends JPanel {
 	private TextArea textArea;
 
 	public static PrintWriter out;
 
-	public Essay() {
+	public Description_of_Exam() {
 
-		setLayout(new MigLayout("", "[right][grow]",
-				"[]10[252.00,grow,top][grow][]"));
+		setLayout(new MigLayout("", "[right][grow]", "[252.00,grow,top][]"));
 
-		JLabel lblNewLabel = new JLabel("Question Titil (optional) ");
-		add(lblNewLabel, "cell 0 0,alignx trailing");
+		JLabel lblQuistion = new JLabel("Description this Exam");
 
-		jtfTitle = new TextField();
-		add(jtfTitle, "cell 1 0,growx");
-		jtfTitle.setColumns(10);
-
-		JLabel lblQuistion = new JLabel("Question");
-
-		add(lblQuistion, "cell 0 1,alignx right");
+		add(lblQuistion, "cell 0 0,alignx right");
 
 		textArea = new TextArea();
-		add(textArea, "cell 1 1,grow");
+		add(textArea, "cell 1 0,grow");
 
-		JButton btnNewButton = new JButton("Save and Add a other Question");
-		add(btnNewButton, "cell 1 3,alignx right");
+		JButton btnNewButton = new JButton("Save and go to Questions");
+		add(btnNewButton, "cell 1 1,alignx left");
 
 		btnNewButton.addActionListener(new ActionListener() {
 
@@ -51,20 +41,17 @@ public class Essay extends JPanel {
 				try {
 					out = new PrintWriter(new BufferedWriter(new FileWriter(
 							"Gift_ExamQ_Format.txt", true)));
-					String qusetionTitle = jtfTitle.getText();
-					String qusetionQ = textArea.getText();
 
-					out.append("\n::" + qusetionTitle + "::" + qusetionQ + "{}"
-							+ "\n");
+					out.append("\nDescription: \n" + textArea.toString() + "\n");
 					out.close();
 
 				} catch (IOException e) {
+
 					e.printStackTrace();
 				} finally {
-					jtfTitle.setText("");
 					textArea.setText("");
 					JOptionPane.showMessageDialog(null,
-							"Question has been saved");
+							"Description has been saved");
 				}
 
 			}
