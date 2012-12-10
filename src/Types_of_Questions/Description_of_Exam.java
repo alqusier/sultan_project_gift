@@ -13,36 +13,35 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import net.miginfocom.swing.MigLayout;
 
-public class Essay extends JPanel {
-	private TextField jtfTitle;
+public class Description_of_Exam extends JPanel {
 	private TextArea textArea;
 
 	public static PrintWriter out;
 
-	public Essay() {
+	public Description_of_Exam() {
 
-		setLayout(new MigLayout("", "[right][grow]",
-				"[]10[252.00,grow,top][grow][]"));
-
-		JLabel lblNewLabel = new JLabel("Question Titil (optional) ");
+		
+		setLayout(new MigLayout("", "[right][grow]", "[252.00,grow,top][]"));
+		JLabel lblNewLabel = new JLabel("Exam Titil");
 		add(lblNewLabel, "cell 0 0,alignx trailing");
+		
+		final TextField textField = new TextField();
+		add(textField, "cell 0 0,growx");
+		textField.setColumns(10);
 
-		jtfTitle = new TextField();
-		add(jtfTitle, "cell 1 0,growx");
-		jtfTitle.setColumns(10);
+		JLabel lblQuistion = new JLabel("Description this Exam");
 
-		JLabel lblQuistion = new JLabel("Question");
-
-		add(lblQuistion, "cell 0 1,alignx right");
+		add(lblQuistion, "cell 0 0,alignx right");
 
 		textArea = new TextArea();
-		add(textArea, "cell 1 1,grow");
+		add(textArea, "cell 1 0,grow");
 
-		JButton btnNewButton = new JButton("Save and Add a other Question");
-		add(btnNewButton, "cell 1 3,alignx right");
+		JButton btnNewButton = new JButton("Save and go to Questions");
+		add(btnNewButton, "cell 1 1,alignx left");
 
 		btnNewButton.addActionListener(new ActionListener() {
 
@@ -51,21 +50,22 @@ public class Essay extends JPanel {
 				try {
 					out = new PrintWriter(new BufferedWriter(new FileWriter(
 							"Gift_ExamQ_Format.txt", true)));
-					String qusetionTitle = jtfTitle.getText();
-					String qusetionQ = textArea.getText();
-
-					out.append("\n::" + qusetionTitle + "::" + qusetionQ + "{}"
-							+ "\n");
+					
+					out.append("Exam Title: " + textField.getText() +  "\nDescription: \n" + textArea.getText() + "\n");
 					out.close();
+					
+//					out.append("\n::" + qusetionTitle + "::" + qusetionQ + "{}"
+//							+ "\n");
+//					out.close();
 
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} finally {
-					jtfTitle.setText("");
+					
 					textArea.setText("");
+					textField.setText(" ");
 					JOptionPane.showMessageDialog(null,
-							"Question has been saved");
+							"Description has been saved");
 				}
 
 			}
