@@ -1,13 +1,34 @@
-Exam Title: aaaa
+Exam Title: vbnmcvbm
 Description: 
-gfhgfhhsfhsfh
+cvbnmcvncv
 
-::aaaa::fgdfgnbfgnbfgdnb{T}
+::vbnvcn::cvbncvbn{F}
 
-::aaaa::fgnbdfgnbgfngf{=dfgnbgfdnb =fgngfn  S. dfgnbgfdnb = fgngfn}
-::aaaaa::fghdfghgfdhgfh{
-~%100%fghgfh
-~%20%dfg
-~%50%dfg
-~%-100%
+::vbnvcn::vcbncvbncvn{=vcbnvcn  S. vcbnvcn}
+
+::vcxbncxvn::vcbncvnvc{
+~%-100%vbnvcn
+~%-100%vcbn
+~%-100%vcbnv
+~%-100%cvbncvn
+}
+::vcbncvn::
+cvbnvcn {#
+=vcbnvcn:0
+=%0%vcbnvcn:0
+}
+
+
+::cvbnvcn::cvbnvcnv{}
+
+::cvbnvcnvc::cvbncvnn  . {
+=  ->  
+=  ->  
+=  ->  
+}
+
+::cgfbhxfdgb::dfghdsfghfdh  . {
+=dfghfdh  ->  
+=dfghfdh  ->  
+=  ->  
 }

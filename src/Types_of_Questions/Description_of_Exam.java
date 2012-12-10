@@ -54,9 +54,6 @@ public class Description_of_Exam extends JPanel {
 					out.append("Exam Title: " + textField.getText() +  "\nDescription: \n" + textArea.getText() + "\n");
 					out.close();
 					
-//					out.append("\n::" + qusetionTitle + "::" + qusetionQ + "{}"
-//							+ "\n");
-//					out.close();
 
 				} catch (IOException e) {
 					e.printStackTrace();
